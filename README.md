@@ -1,26 +1,4 @@
-Dayalbagh Educational Institute
-
-Faculty of Engineering
-
-Dayalbagh, Agra
-
-![A logo with a sun and flowers Description automatically
-generated](./img/image1.png){width="2.0833333333333335in"
-height="2.0833333333333335in"}
-
-Internship Report: April -- August 2023
-
-Time Series Forecasting
-
-Using ARIMA(AutoRegression Integrated MovingAverage)
-
-Submitted by: Submitted to:
-
-Mukul Kumar Yadav Mr. Guru Charan Bulusu
-
-Roll no. 2002269
-
-Mechanical
+<h1>Time Series Forecasting Using ARIMA(AutoRegression Integrated MovingAverage)</h1>
 
 Table of Contents
 
