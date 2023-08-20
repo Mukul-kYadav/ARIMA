@@ -1,3 +1,5 @@
+<h1>ARIMA (AutoRegression Integrated MovingAverage) Forecasting</h1>
+
 <h3>Table of Contents</h3>
 
 1.  <a href = "#1">Introduction to Time Series</a>
@@ -81,7 +83,7 @@ previous values.
 > We will be using this dataset and some other datasets also to forecast
 > future demand/values using ARIMA.
 
-![Time Series Dataset ](./img/image2.png)
+![Time Series Dataset ](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image2.png)
 
 <h4 id = "1.2">ii.  Time Series Components</h4>
 
@@ -100,8 +102,8 @@ previous values.
 > price plot is showing a uptrend and Egg price plot is showing a
 > downtrend.
 >
-> ![google closing price showing uptrend](./img/image4.png)
-![A graph showing the price of an egg](./img/image5.png)
+> ![google closing price showing uptrend](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image4.png)
+![A graph showing the price of an egg](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image5.png)
 >
 <h4 id = "1.2.2">b. Seasonality:</h4>
 
@@ -118,7 +120,7 @@ previous values.
 > patterns.
 >
 > ![A graph showing the value of beer
-> production](./img/image8.png)
+> production](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image8.png)
 >
 <h4 id = "1.2.3">c. Cyclicity:</h4>
 
@@ -127,7 +129,7 @@ previous values.
 > influence the data over extended periods.
 >
 > ![A graph showing the price of an
-> egg](./img/image5.png)
+> egg](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image5.png)
 >
 <h4 id = "1.2.4">d. Seasonal vs. Cyclical:</h4 >
 
@@ -166,10 +168,10 @@ previous values.
 > stationary\*\*
 
 ![A graph showing the growth of gas production Description automatically
-generated](./img/image16.png)
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image16.png)
 ![A graph showing the price of a graph
 Description automatically generated with medium
-confidence](./img/image17.png)
+confidence](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image17.png)
 
 <h4 id = "1.4">iv.  Differencing</h4>
 
@@ -496,7 +498,7 @@ simultaneously.
 Let us first see a flowchart for general process of forecasting using
 ARIMA model. We will follow steps shown in flowchart for forecasting:
 
-![](./img/image18.png)
+![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image18.png)
 
 <h4 id="3.1">i.  Autocorrelation</h4>
 
@@ -515,7 +517,7 @@ ARIMA model. We will follow steps shown in flowchart for forecasting:
 > Autocorrelation of lag k is represented by:
 >
 > ![A math equations on a white background Description automatically
-> generated](./img/image20.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image20.png)
 >
 > Where: T is the total number of observations in the time series.
 >
@@ -546,10 +548,10 @@ ȳ is the mean of the time series values.
 
 > Let us see how we can plot ACF of our demand temperature dataset.
 >
-> ![](./img/image21.png)
+> ![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image21.png)
 >
 > ![A graph with blue dots Description automatically
-> generated](./img/image22.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image22.png)
 
 <h4 id="3.3">iii.  PACF</h4>
 
@@ -565,10 +567,10 @@ ȳ is the mean of the time series values.
 > Let us see how we can plot ACF of our demand temperature dataset.
 >
 > ![A screenshot of a computer program Description automatically
-> generated](./img/image23.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image23.png)
 >
 > ![A graph with blue dots Description automatically
-> generated](./img/image24.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image24.png)
 <h4 id="3.4">iv.  Seasonality</h4>
 
 -   Seasonality refers to repeating patterns in a time series at regular
@@ -584,8 +586,8 @@ ȳ is the mean of the time series values.
 > temperature dataset.
 
 ![A screenshot of a computer program Description automatically
-generated](./img/image25.png)
-![](./img/image26.png)
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image25.png)
+![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image26.png)
 
 The plot above shows our dataset contains seasonal pattern, but we need
 a stationary time series to perform ARIMA forecasting. In this case we
@@ -671,7 +673,7 @@ which we have already discussed in section 1.4.
 > Let's use auto_arima on our dataset:
 >
 > ![A screenshot of a computer Description automatically
-> generated](./img/image27.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image27.png)
 >
 > After searching for best parameters it returns best fitted
 > parameters(p,d,q). we can also print the summary of best fitted model
@@ -680,7 +682,7 @@ which we have already discussed in section 1.4.
 > For our dataset the best p,d,q are:
 >
 > ![A close up of numbers Description automatically
-> generated](./img/image28.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image28.png)
 
 <h4 id="3.6">vi.  White Noise and Residual Analysis</h4>
 
@@ -711,7 +713,7 @@ which we have already discussed in section 1.4.
     -   Here's the equation for ADF test:
 
 > ![ADF test stationarity in Time
-> Series](./img/image29.png)
+> Series](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image29.png)
 >
 > Let's see how we do ADF test for our dataset and accept or reject null
 > hypothesis.
@@ -724,17 +726,17 @@ which we have already discussed in section 1.4.
 > ADF test for un-differenced series
 >
 > ![A close up of a text Description automatically
-> generated](./img/image30.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image30.png)
 >
 > ![A number with numbers on it Description automatically
-> generated](./img/image31.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image31.png)
 > ADF test for seasonally and first differenced Series
 >
 > ![A computer code with text Description automatically
-> generated](./img/image32.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image32.png)
 > ![A number with numbers on it
 > Description automatically
-> generated](./img/image33.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image33.png)
 >
 > As p-value is \<\<0.05 we will reject null hypothesis and assume the
 > time series is stationary.
@@ -825,21 +827,21 @@ which we have already discussed in section 1.4.
 > We will be using Python\'s statsmodels library to import the SARIMAX
 > class.
 >
-> ![](./img/image34.png)
+> ![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image34.png)
 
 -   Model Training:
 
 > First dividing dataset into training and testing dataset
 >
 > ![A close-up of a white background Description automatically
-> generated](./img/image35.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image35.png)
 >
 > As the length of our dataset was 1360, we are using 1300 datapoints as
 > training dataset and remaining for testing and forecasting.
 >
 > Training:
 >
-> ![](./img/image36.png)
+> ![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image36.png)
 >
 > In this code:
 
@@ -860,7 +862,7 @@ which we have already discussed in section 1.4.
 > Summary of Model's characteristics.
 >
 > ![A screenshot of a computer screen Description automatically
-> generated](./img/image37.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image37.png)
 
 -   Forecasting:
 
@@ -873,7 +875,7 @@ which we have already discussed in section 1.4.
         assess the uncertainty of the forecasts.
 
 ![A black text on a white background Description automatically
-generated](./img/image38.png){width="6.768055555555556in"
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image38.png){width="6.768055555555556in"
 height="1.1875in"}
 
 -   Plotting Forecast:
@@ -883,10 +885,10 @@ height="1.1875in"}
 > how well the model captures the patterns and fluctuations.
 
 ![A computer screen shot of a computer code Description automatically
-generated](./img/image39.png)
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image39.png)
 Output:
 
-![](./img/image40.png)
+![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image40.png)
 
 Conclusion:
 
@@ -996,16 +998,16 @@ given below.
     -   Dataset
 
 > ![A screenshot of a graph Description automatically
-> generated](./img/image41.png)
+> generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image41.png)
 -   Time Series Plot
 
 ![A blue line graph with black text Description automatically
-generated](./img/image42.png)
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image42.png)
 
 -   Actual v/s Forecast Plot
 
 ![A graph with blue and orange lines Description automatically
-generated](./img/image43.png)
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image43.png)
 -   GitHub repository link for complete code
 
 > <https://github.com/Mukul-kYadav/ARIMA/blob/main/sales.ipynb>
@@ -1014,16 +1016,16 @@ generated](./img/image43.png)
 
     -   Dataset
 
-> ![](./img/image44.png)
+> ![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image44.png)
 
 -   Time Series Plot
 
 ![A blue line graph with numbers Description automatically
-generated](./img/image45.png)
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image45.png)
 
 -   Actual v/s Forecast Plot
 
-![](./img/image46.png)
+![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image46.png)
 -   GitHub repository link for complete code
 
 > <https://github.com/Mukul-kYadav/ARIMA/blob/main/electricity.ipynb>
