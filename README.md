@@ -3,87 +3,48 @@
 Table of Contents
 
 1.  Introduction to Time Series
-
     1.  Time Series
-
     2.  Time Series Components
-
         1.  Trend
-
         2.  Seasonality
-
         3.  Cyclicity
-
         4.  Seasonal v/s Cyclical
-
     3.  Stationary and Non- stationary Data
-
     4.  Differencing
-
 2.  Time Series Techniques
-
     1.  Auto Regression
-
     2.  Moving Average
-
     3.  ARMA
-
     4.  Exponential Smoothing
-
     5.  ARIMA
-
 3.  ARIMA (AutoRegression Integrated MovingAverage)
-
     1.  Autocorrelation
-
     2.  ACF
-
     3.  PACF
-
     4.  Seasonality
-
     5.  Model Selection and Parameters
-
     6.  White Noise and Residual Analysis
-
     7.  ADF (Augmented Dickey-Fuller) Test
-
     8.  Implementing ARIMA
-
     9.  Implementing SARIMAX
-
 4.  Conclusion
-
 5.  References
-
 6.  Acknowledgements
-
 7.  Appendices
-
     1.  ARIMA Forecast 1
-
     2.  ARIMA Forecast 2
-
 ```{=html}
 <!-- -->
 ```
 1.  Introduction to Time Series
 
-A time series is a sequence of data points, measurements, or
-observations taken at successive points in time. Each data point is
-associated with a specific timestamp, allowing us to analyze changes and
-patterns that occur over time. Time series data often reveals temporal
-dependencies, where the value at one time point is influenced by
-previous values.
+A time series is a sequence of data points, measurements, or observations taken at successive points in time. Each data point is associated with a specific timestamp, allowing us to analyze changes and patterns that occur over time. Time series data often reveals temporal dependencies, where the value at one time point is influenced by previous values.
 
 1.  Time Series analysis helps to identify and explain:
 
 -   Any variation in data due to seasonality
-
 -   Cyclic patterns that repeat
-
 -   Trend in data
-
 -   Growth rates in Trends
 
 > Here is how a Time Series dataset looks like:
@@ -91,8 +52,7 @@ previous values.
 > We will be using this dataset and some other datasets also to forecast
 > future demand/values using ARIMA.
 
-![Time Series Dataset ](./img/image2.png){width="6.768055555555556in"
-height="2.7222222222222223in"}
+![Time Series Dataset ](./img/image2.png)
 
 1.  Time Series Components
 
@@ -1032,40 +992,6 @@ also) using ARIMA and SARIMAX can be accessed on our GitHub repository:
 6.  How to Create an ARIMA Model for Time Series Forecasting in Python
 
 > <https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/>
-
-6.  Acknowledgement
-
-I would like to take this opportunity to extend my heartfelt gratitude
-to the following individuals and entities, without whom this project
-would not have been possible:
-
-Mr. Guru Charan Bulusu, for their invaluable guidance, support, and
-expertise throughout the course of this project. Their insightful
-feedback and encouragement have been instrumental in shaping the
-project\'s direction.
-
-> The authors of the research papers, textbooks, online articles, and
-> tutorials that I referenced during the project. Their contributions to
-> the field of time series analysis and forecasting have been
-> indispensable in shaping my understanding.
->
-> The open-source community on platforms such as GitHub, for providing
-> access to code repositories, forums, and resources that facilitated my
-> learning and implementation of various techniques.
-
-Finally, I extend my gratitude to my university for providing the
-necessary resources and environment that fostered a conducive learning
-and research atmosphere.
-
-Thank you all for being an integral part of this journey.
-
-Mukul Kumar Yadav
-
-Roll No.: 2002269
-
-Dayalbagh Educational Institute,
-
-Faculty of Engineering, Dayalbagh, Agra
 
 7.  Appendices
 
