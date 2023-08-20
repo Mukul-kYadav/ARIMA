@@ -52,7 +52,7 @@ A time series is a sequence of data points, measurements, or observations taken 
 > We will be using this dataset and some other datasets also to forecast
 > future demand/values using ARIMA.
 
-![Time Series Dataset ](./img/image2.png)
+> ![Time Series Dataset ](./img/image2.png)
 
 1.  Time Series Components
 
