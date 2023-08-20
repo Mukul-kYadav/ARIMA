@@ -155,7 +155,7 @@ previous values.
 > depend on the time at which the series is observed.
 >
 > Thus, time series with trends, or with seasonality, are not stationary
-> --- the trend and seasonality will affect the value of the time series
+> -- the trend and seasonality will affect the value of the time series
 > at different times.
 >
 > But, a time series which looks like white noise series is stationary.
@@ -203,13 +203,13 @@ confidence](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image17.png)
 > difference (Lag 2 Difference) involves subtracting the first-order
 > differences.
 >
-> Second-Order Differencing: Y~t~'' = Y~t~' - Y~t-1~'
+> Second-Order Differencing: Yt'' = Yt' - Yt-1'
 >
-> Y~t~'' = (Y~t~ -- Y~t-1~) -- (Y~t-1~ -- Y~t-2~)
+> Yt'' = (Yt - Yt-1) - (Yt-1 - Yt-2)
 >
-> Y~t~'' = Y~t~ -- Y~t-1~ -- Y~t-1~ + Y~t-2~
+> Yt'' = Yt - Yt-1 - Yt-1 + Yt-2
 >
-> Finally, Y~t~'' = Y~t~ -- 2Y~t-1~ + Y~t-2~
+> Finally, Yt'' = Yt - 2Yt-1 + Yt-2
 >
 > Similarly, we can find n^th^ order differencing.
 >
@@ -220,7 +220,7 @@ confidence](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image17.png)
 > A seasonal difference is the difference between an observation and the
 > corresponding observation from last year.
 >
-> Seasonal Differencing: Y~t~' = Y~t~ -- Y~t-m~ where, m=number of
+> Seasonal Differencing: Yt' = Yt - Yt-m where, m=number of
 > seasons
 >
 > For example, for monthly data m = 12, for quarterly data m = 4
@@ -271,74 +271,76 @@ series techniques used in forecasting and analysis.
 -   AR models are denoted as AR(p), where \'p\' represents the number of
     lags used in the model.
 
-> AR(1): Y~t~​ = c + ϕ~1~ ​Y~t−1~ ​+ ε~t~​
+> AR(1): Yt​ = c + ϕ1 ​Yt−1 ​+ εt​
 >
-> Where, Y~t~​ ​ is the current value at time t.
+> Where, Yt​ ​ is the current value at time t.
 >
 > c is the intercept term.
 >
-> ϕ~1~ is the autoregressive coefficients for lag.
+> ϕ1 is the autoregressive coefficients for lag.
 >
-> Y~t−1~ is the lagged value.
+> Yt−1 is the lagged value.
 >
-> ε~t~​ represents the white noise error term at time t.
+> εt​ represents the white noise error term at time t.
 >
-> AR(p): Y~t​~ = c + ϕ~1~​Y~t−1~​ + ϕ~2~​y~t−2~​ + ... + ϕ~p​~y~t−p~​ + ε~t~​
+> AR(p): Yt​ = c + ϕ1​Yt−1​ + ϕ2​yt−2​ + ... + ϕp​yt−p​ + εt​
 >
-> Where: Y~t~ ​ is the current value at time t.
+> Where: Yt ​ is the current value at time t.
 >
 > c is the intercept term.
 >
 > ϕ1​, ϕ2​, ..., ϕp​ are the autoregressive coefficients for lags 1 to p.
 >
-> Y~t−1~​, Y~t−2~, ..., Y~t−p~​ are the lagged values.
+> Yt−1​, Yt−2, ..., Yt−p​ are the lagged values.
 >
-> ε~t~​ represents the white noise error term at time t.
+> εt​ represents the white noise error term at time t.
 >
 > AR(p) process models each future observations as a function of 'p'
 > previous observations.
 >
-> Auto Regression vs. Linear Regression:
+Auto Regression vs. Linear Regression:
 >
 > Auto Regression (AR) and Linear Regression are both regression
 > techniques, but they serve different purposes in different contexts.
 > Let\'s explore the key differences between them using equations:
 >
-> Auto Regression (AR):
+Auto Regression (AR):
 >
 > The Auto Regression model represents the relationship between a
 > variable and its own past values. It captures temporal dependencies by
 > expressing the current value as a linear combination of its lagged
 > values, plus a white noise term (error):
 >
-> AR(p): Y~t​~ = c + ϕ~1~​Y~t−1~​ + ϕ~2~​y~t−2~​ + ... + ϕ~p​~y~t−p~​ + ε~t~​
+AR(p): Yt​ = c + ϕ1​Yt−1​ + ϕ2​yt−2​ + ... + ϕp​yt−p​ + εt​
 >
-> Where: Y~t~ ​ is the current value at time t.
+> Where: 
+> Yt ​ is the current value at time t.
 >
 > c is the intercept term.
 >
 > ϕ1​, ϕ2​, ..., ϕp​ are the autoregressive coefficients for lags 1 to p.
 >
-> Y~t−1~​, Y~t−2~, ..., Y~t−p~​ are the lagged values.
+> Yt−1​, Yt−2, ..., Yt−p​ are the lagged values.
 >
-> ε~t~​ represents the white noise error term at time t.
+> εt​ represents the white noise error term at time t.
 >
 > Auto Regression captures temporal patterns and dependencies, making it
 > suitable for time series data.
 >
-> Linear Regression:
+Linear Regression:
 >
 > Linear Regression models the relationship between a dependent variable
-> ( Y ) and one or more independent variables ( x~1~, x~2~, ... , x~n~
+> ( Y ) and one or more independent variables ( x1, x2, ... , xn
 > ). It aims to find the best-fitting linear equation:
 >
-> Y = β ~0~ + β ~1~ x~1~ + β ~2~ x~2~ + ... + β ~n~ x~n~ + ε
+Y = β 0 + β 1 x1 + β 2 x2 + ... + β n xn + ε
 >
-> Where: Y is the dependent variable.
+> Where: 
+> Y is the dependent variable.
 >
-> β~0~, β ~1~, β~2~, ..., β~n~ are the regression coefficients.
+> β0, β 1, β2, ..., βn are the regression coefficients.
 >
-> x~1~, x~2~, ..., x~n~ are the independent variables.
+> x1, x2, ..., xn are the independent variables.
 >
 > ε represents the error term.
 >
@@ -357,34 +359,33 @@ series techniques used in forecasting and analysis.
 
 -   An MA(q) model includes \'q\' lagged white noise terms.
 
-> MA(1): Y~t~​ = c + ε~t~ ​+ Θ~1~​ε~t−1~​ + Θ~2~​ε~t−2~​ + ... + Θ~q​~ε~t−q~​
+MA(1): Yt​ = c + εt ​+ Θ1​εt−1​ + Θ2​εt−2​ + ... + Θq​εt−q​
 >
-> Where: Y~t~​ is the current value at time t.
->
-> c is the intercept term.
->
-> ε~t~ is the white noise error term at time t.
->
-> Θ~1~ are the moving average coefficients for lags 1.
->
-> ε~t−1~ are the lagged white noise terms.
->
-> MA(q): Y~t~​ ​= c + ε~t~ ​+ Θ~1​~ε~t−1​~ + Θ~2~​ε~t−2~​ + ... + Θ~q~​ε~t−q~​
->
-> Where: Y~t~ ​ is the current value at time t.
+> Where: Yt​ is the current value at time t.
 >
 > c is the intercept term.
 >
-> ε~t​~ is the white noise error term at time t.
+> εt is the white noise error term at time t.
 >
-> Θ~1​~, Θ~2​~, ..., Θ~q~​ are the moving average coefficients for lags 1
+> Θ1 are the moving average coefficients for lags 1.
+>
+> εt−1 are the lagged white noise terms.
+>
+> MA(q): Yt​ ​= c + εt ​+ Θ1​εt−1​ + Θ2​εt−2​ + ... + Θq​εt−q​
+>
+> Where: 
+> Yt ​ is the current value at time t.
+>
+> c is the intercept term.
+>
+> εt​ is the white noise error term at time t.
+>
+> Θ1​, Θ2​, ..., Θq​ are the moving average coefficients for lags 1
 > to q.
 >
-> ε~t−1~​, ε~t−2~ , ..., ε~t−q~​ are the lagged white noise terms.
+> εt−1​, εt−2 , ..., εt−q​ are the lagged white noise terms.
 >
-> A Moving Average (MA) process models each future observation as a
-> linear combination of \'q\' previous error terms, rather than past
-> observations.
+A Moving Average (MA) process models each future observation as a linear combination of \'q\' previous error terms, rather than past observations.
 
 <h4 id="2.3">iii.  ARMA</h4>
 
@@ -394,26 +395,22 @@ series techniques used in forecasting and analysis.
 -   An ARMA(p, q) model includes both autoregressive and moving average
     terms.
 
-> ARMA(p,q): Y~t​~ = c + ϕ~1~​Y~t−1~​ + ϕ~2~​y~t−2~​ + ... + ϕ~p​~y~t−p~​ +
-> ε~t~ + Θ~1~ε~t−1~ + Θ~2~ε~t−2~ + ... + Θ~q~ε~t−q~
+ARMA(p,q): Yt​ = c + ϕ1​Yt−1​ + ϕ2​yt−2​ + ... + ϕp​yt−p​ + εt + Θ1εt−1 + Θ2εt−2 + ... + Θqεt−q
 >
-> Where: Y~t~ ​ is the current value at time t.
+> Where: 
+> Yt ​ is the current value at time t.
 >
 > c is the intercept term.
 >
 > ϕ1​, ϕ2​, ..., ϕp​ are the autoregressive coefficients for lags 1 to p.
 
-Θ~1​~, Θ~2​~, ..., Θ~q~ are the moving average coefficients for lags 1 to
-q.
+> Θ1​, Θ2​, ..., Θq are the moving average coefficients for lags 1 to q.
 
-> Y~t−1~​, Y~t−2~, ..., Y~t−p~​ are the lagged values.
+> Yt−1​, Yt−2, ..., Yt−p​ are the lagged values.
 >
-> ε~t~​ represents the white noise error term at time t.
+> εt​ represents the white noise error term at time t.
 >
-> An AutoRegressive Moving Average (ARMA) process models each future
-> observation as a combination of \'p\' previous observations from the
-> auto regressive component and \'q\' previous error terms from the
-> moving average component.
+An AutoRegressive Moving Average (ARMA) process models each future observation as a combination of \'p\' previous observations from the auto regressive component and \'q\' previous error terms from the moving average component.
 >
 > Finding orders (p,q) may not be easy. Generally Thump rules or other
 > methods such as RMSE, MAPE, AIC, BIC are used.
@@ -429,15 +426,16 @@ q.
     Exponential Smoothing (SES), Double Exponential Smoothing (Holt\'s
     method), and Triple Exponential Smoothing (Holt-Winters method).
 
-> Simple Exponential Smoothing (SES): Y'~​t+1~​ = αY~t~ ​+ (1−α) Y​'~t~​
+Simple Exponential Smoothing (SES): Y'​t+1​ = αYt ​+ (1−α) Y​'t​
 >
-> Where: Y'~​t+1~​ is the forecasted value for the next time period.
+> Where: 
+> Y'​t+1​ is the forecasted value for the next time period.
 >
 > *α* is the smoothing parameter (0 \< *α* \< 1).
 >
-> Y~t~​ is the actual value at time *t*.
+> Yt​ is the actual value at time *t*.
 >
-> Y'~t~​ is the forecasted value at time *t*.
+> Y't​ is the forecasted value at time *t*.
 
 <h4 id="2.5">v.  ARIMA</h4>
 
@@ -460,8 +458,7 @@ c.  MovingAverage Component: Function of past error values
 
 > It is represented by the equation:
 >
-> Y t ​= c + ϕ1​Yt−1 ​+ ϕ2​Yt−2 ​ + ... + ϕp​yt−p ​+ θ1​εt−1 ​+ θ2​εt−2 ​+ ... +
-> θq​εt−q ​+ εt​
+Yt ​= c + ϕ1​Yt−1 ​+ ϕ2​Yt−2 ​ + ... + ϕp​yt−p ​+ θ1​εt−1 ​+ θ2​εt−2 ​+ ... + θq​εt−q ​+ εt​
 >
 > Where:
 >
@@ -479,10 +476,8 @@ c.  MovingAverage Component: Function of past error values
 >
 > εt​ represents the white noise error term at time t.
 >
-> The differencing operation is applied d times to the time series data
-> to achieve stationarity.
->
-> Our main focus in this report will be on ARIMA(p,d,q) model.
+The differencing operation is applied d times to the time series data to achieve stationarity.
+ Our main focus in this report will be on ARIMA(p,d,q) model.
 
 <h3 id="3">3.  ARIMA (AutoRegression Integrated MovingAverage)</h3>
 
@@ -509,9 +504,9 @@ ARIMA model. We will follow steps shown in flowchart for forecasting:
 -   In simple words, Autocorrelation is a correlation of a variable
     observed at two time points.
 
--   For example, if we find autocorrelation between Y~t~ and Y~t-1~ then
+-   For example, if we find autocorrelation between Yt and Yt-1 then
     it is called autocorrelation of lag 1. Similarly, autocorrelation
-    between Y~t~ and Y~t-3~ is called autocorrelation of lag 3 and so
+    between Yt and Yt-3 is called autocorrelation of lag 3 and so
     on.
 
 > Autocorrelation of lag k is represented by:
@@ -521,9 +516,9 @@ ARIMA model. We will follow steps shown in flowchart for forecasting:
 >
 > Where: T is the total number of observations in the time series.
 >
-> y~t~ is the value of the time series at time t.
+> yt is the value of the time series at time t.
 
-ȳ is the mean of the time series values.
+> ȳ is the mean of the time series values.
 
 > k is the lag for which autocorrelation is being calculated.
 >
@@ -555,8 +550,8 @@ ȳ is the mean of the time series values.
 
 <h4 id="3.3">iii.  PACF</h4>
 
--   Partial Autocorrelation of lag k is autocorrelation between y~t~ and
-    y~t+k~ after the removal of linear dependence of y~t+1~ to y~t+k-1~.
+-   Partial Autocorrelation of lag k is autocorrelation between yt and
+    yt+k after the removal of linear dependence of yt+1 to yt+k-1.
 
 -   The PACF plot reveals the direct relationship between a variable and
     its lagged values, excluding the influence of intermediate values.
@@ -718,7 +713,7 @@ which we have already discussed in section 1.4.
 > Let's see how we do ADF test for our dataset and accept or reject null
 > hypothesis.
 >
-> Null hypothesis: H~o~ = Dataset is non-Stationary
+> Null hypothesis: Ho = Dataset is non-Stationary
 >
 > ADF test will return p-value. If p-value is \< 0.05 then we will
 > reject null hypothesis.
@@ -757,7 +752,7 @@ which we have already discussed in section 1.4.
         must select between ARIMA, SARIMA and SARIMAX. They are just
         extensions of ARIMA model.
 
-> Model Selection (ARIMA/SARIMA/SARIMAX):
+ Model Selection (ARIMA/SARIMA/SARIMAX):
 >
 > Selecting the appropriate ARIMA model, whether it\'s the basic ARIMA,
 > Seasonal ARIMA (SARIMA), or Seasonal ARIMA with Exogenous Variables
@@ -765,7 +760,7 @@ which we have already discussed in section 1.4.
 > characteristics and the specific forecasting requirements. Each model
 > type has its strengths and considerations.
 >
-> ARIMA:
+ ARIMA:
 
 -   AutoRegressive Integrated Moving Average (ARIMA) models are suitable
     for time series data that exhibit trends and dependencies.
@@ -776,7 +771,7 @@ which we have already discussed in section 1.4.
 -   It\'s effective for capturing patterns that evolve over time, but it
     may not handle seasonal variations well.
 
-> SARIMA (Seasonal ARIMA):
+ SARIMA (Seasonal ARIMA):
 
 -   Seasonal ARIMA (SARIMA) extends the basic ARIMA model to accommodate
     time series data with seasonal patterns.
@@ -839,11 +834,11 @@ which we have already discussed in section 1.4.
 > As the length of our dataset was 1360, we are using 1300 datapoints as
 > training dataset and remaining for testing and forecasting.
 >
-> Training:
+ Training:
 >
 > ![](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image36.png)
 >
-> In this code:
+ In this code:
 
 -   train\[\"dem\"\] represents the endogenous variable (demand) from
     the training set.
@@ -859,7 +854,7 @@ which we have already discussed in section 1.4.
 -   After fitting the model, we can print a summary of the model\'s
     characteristics using the results.summary() function.
 
-> Summary of Model's characteristics.
+ Summary of Model's characteristics.
 >
 > ![A screenshot of a computer screen Description automatically
 > generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image37.png)
@@ -875,9 +870,7 @@ which we have already discussed in section 1.4.
         assess the uncertainty of the forecasts.
 
 ![A black text on a white background Description automatically
-generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image38.png){width="6.768055555555556in"
-height="1.1875in"}
-
+generated](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image38.png)
 -   Plotting Forecast:
 
 > Now we can visualize the actual demand, predicted demand, and
@@ -961,9 +954,6 @@ also) using ARIMA and SARIMAX can be accessed on our GitHub repository:
 
 <h3 id="5">5.  References</h3>
 
-```{=html}
-<!-- -->
-```
 1.  Forecasting: Principles and Practice
     <https://otexts.com/fpp3/arima.html>
 
@@ -972,7 +962,7 @@ also) using ARIMA and SARIMAX can be accessed on our GitHub repository:
 3.  Time Series Analysis Handbook:
     <https://phdinds-aim.github.io/time_series_handbook/Preface/Preface.html>
 
-4.  ARIMA Model -- Complete Guide to Time Series Forecasting in Python
+4.  ARIMA Model - Complete Guide to Time Series Forecasting in Python
 
 > <https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/>
 
