@@ -1,6 +1,6 @@
 <h1>Time Series Forecasting Using ARIMA(AutoRegression Integrated MovingAverage)</h1>
 
-Table of Contents
+<h4>Table of Contents</h4>
 
 1.  Introduction to Time Series
     1.  Time Series
@@ -56,123 +56,90 @@ A time series is a sequence of data points, measurements, or observations taken 
 
 1.  Time Series Components
 
-> Time series can be decomposed into various components that help us
-> understand its underlying structure:
+Time series can be decomposed into various components that help us understand its underlying structure:
 
 1.  Trend:
 
-> Persistent upward or downward pattern.
->
-> The trend component represents the long-term movement or direction of
-> the data. It showcases whether the data is generally increasing,
-> decreasing, or staying relatively constant over time.
->
-> In the time series plots below we can see two plots the google closing
-> price plot is showing a uptrend and Egg price plot is showing a
-> downtrend, marked with blue arrows
->
-> ![google closing price showing
-> uptrend](./img/image4.png){width="3.1273753280839895in"
-> height="2.1916240157480313in"}![A graph showing the price of an
-> egg](./img/image5.png){width="2.8115168416447944in"
-> height="2.215379483814523in"}
->
-> 1.2.2. Seasonality:
->
-> It is repetitive and predictable pattern of data behavior in a time
-> series around the trend line.
->
-> Identification of seasonal effect provides better understanding of
-> time series data.
->
-> Elimination of seasonal effect from data is called De-Seasonalization
-> or seasonal adjusting.
->
-> In the beer production plot below, we can clearly see the seasonal
-> patterns marked with double headed blue arrows.
->
-> ![A graph showing the value of beer
-> production](./img/image8.png){width="3.5502734033245846in"
-> height="2.5433552055993003in"}
->
-> 1.2.3. Cyclicity:
->
-> Cyclicity represents longer-term patterns that are not as regular as
-> seasonality. These cycles might not have fixed periods but still
-> influence the data over extended periods.
->
-> ![A graph showing the price of an
-> egg](./img/image5.png){width="4.105515091863517in"
-> height="2.1211122047244095in"}
->
-> 1.2.4. Seasonal vs. Cyclical:
->
-> Distinguishing between seasonality and cyclicity is essential.
->
-> Both exhibit repeated patterns but, seasonality has fixed and
-> consistent periods, while cyclicity is more flexible and might not
-> follow a regular schedule.
->
-> Seasonality shows regular pattern of up and down movement (usually
-> within one year)
->
-> Cyclicity shows repeating up and down movement (usually 2-10 years
-> duration)
+Persistent upward or downward pattern.
+
+The trend component represents the long-term movement or direction of
+the data. It showcases whether the data is generally increasing,
+decreasing, or staying relatively constant over time.
+
+In the time series plots below we can see two plots the google closing
+price plot is showing a uptrend and Egg price plot is showing a
+downtrend, marked with blue arrows
+
+![Uptrend](./img/image4.png)
+![Down Trend](./img/image5.png)
+
+1.2.2. Seasonality:
+
+It is repetitive and predictable pattern of data behavior in a time series around the trend line.
+
+Identification of seasonal effect provides better understanding of time series data.
+
+Elimination of seasonal effect from data is called De-Seasonalization or seasonal adjusting.
+
+In the beer production plot below, we can clearly see the seasonal patterns.
+
+![A graph showing the value of beer production](./img/image8.png)
+
+1.2.3. Cyclicity:
+
+Cyclicity represents longer-term patterns that are not as regular as
+seasonality. These cycles might not have fixed periods but still
+influence the data over extended periods.
+
+![A graph showing the price of an
+egg](./img/image5.png){width="4.105515091863517in"
+height="2.1211122047244095in"}
+
+1.2.4. Seasonal vs. Cyclical:
+
+Distinguishing between seasonality and cyclicity is essential.
+
+Both exhibit repeated patterns but, seasonality has fixed and
+consistent periods, while cyclicity is more flexible and might not
+follow a regular schedule.
+
+Seasonality shows regular pattern of up and down movement (usually
+within one year)
+
+Cyclicity shows repeating up and down movement (usually 2-10 years
+duration)
 
 2.  Stationary and Non- stationary Data
 
-> Stationarity is a crucial property in time series analysis, where
-> statistical properties such as mean, variance, and autocorrelation
-> remain constant over time.
->
-> A stationary time series is one whose statistical properties do not
-> depend on the time at which the series is observed.
->
-> Thus, time series with trends, or with seasonality, are not stationary
-> --- the trend and seasonality will affect the value of the time series
-> at different times.
->
-> But, a time series which looks like white noise series is stationary.
->
-> We can see the stationary and non-stationary time series plots below.
-> The first plot is non-stationary as it has both trend and seasonality,
-> but the second plot is stationary.
->
-> \*\*To perform forecasting using ARIMA we must make our data
-> stationary\*\*
+Stationarity is a crucial property in time series analysis, where statistical properties such as mean, variance, and autocorrelation remain constant over time.
 
-![A graph showing the growth of gas production Description automatically
-generated](./img/image16.png){width="3.239232283464567in"
-height="2.2424912510936132in"}![A graph showing the price of a graph
-Description automatically generated with medium
-confidence](./img/image17.png){width="3.2759306649168853in"
-height="2.1632108486439194in"}
+A stationary time series is one whose statistical properties do not depend on the time at which the series is observed.
+
+Thus, time series with trends, or with seasonality, are not stationary --- the trend and seasonality will affect the value of the time series at different times.
+
+But, a time series which looks like white noise series is stationary.
+
+We can see the stationary and non-stationary time series plots below. The first plot is non-stationary as it has both trend and seasonality, but the second plot is stationary.
+
+\*\*To perform forecasting using ARIMA we must make our data stationary\*\*
+
+![A graph showing the growth of gas production Description automatically generated](./img/image16.png)
+
+![A graph showing the price of a graph Description automatically generated with medium confidence](./img/image17.png)
 
 3.  Differencing
 
-> In simple words, It is process of making non-stationary data into
-> stationary data.
->
-> Differencing involves computing the differences between consecutive
-> observations to remove trends or seasonality that could be present in
-> the data. This helps stabilize the mean and variance, making the data
-> more amenable to modeling.
->
-> **Lag:**
->
-> Before delving deeper into differencing, let\'s first understand the
-> concept of \"lag.\" A lag refers to the time interval between
-> observations in a time series. When we say we\'re calculating the
-> \"lag 1 difference,\" we\'re essentially looking at the difference
-> between the current observation and the observation at the previous
-> time point.
->
-> **First-Order Difference (Lag 1 Difference)**: This involves
-> subtracting each data point from its preceding data point (time t -
-> time t-1). This can help remove linear trends and make the data
-> stationary.
->
-> First-Order Differencing: Y~t~' = Y~t~ -- Y~t-1~
+In simple words, It is process of making non-stationary data into stationary data.
+
+Differencing involves computing the differences between consecutive observations to remove trends or seasonality that could be present in the data. This helps stabilize the mean and variance, making the data more amenable to modeling.
+
+**Lag:**
+
+Before delving deeper into differencing, let\'s first understand the concept of \"lag.\" A lag refers to the time interval between observations in a time series. When we say we\'re calculating the \"lag 1 difference,\" we\'re essentially looking at the difference between the current observation and the observation at the previous time point.
+
+**First-Order Difference (Lag 1 Difference)**: This involves subtracting each data point from its preceding data point (time t - time t-1). This can help remove linear trends and make the data stationary.
+
+First-Order Differencing: Y~t~' = Y~t~ - Yt-1
 >
 > **Second-Order Difference (Lag 2 Difference)**: The second-order
 > difference (Lag 2 Difference) involves subtracting the first-order
