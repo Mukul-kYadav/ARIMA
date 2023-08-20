@@ -83,7 +83,7 @@ previous values.
 > We will be using this dataset and some other datasets also to forecast
 > future demand/values using ARIMA.
 
-![Time Series Dataset ](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image2.png)
+[Time Series Dataset ](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image2.png)
 
 <h4 id = "1.2">ii.  Time Series Components</h4>
 
