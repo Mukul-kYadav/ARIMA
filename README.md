@@ -197,7 +197,7 @@ confidence](https://github.com/Mukul-kYadav/ARIMA/blob/main/img/image17.png)
 > time t-1). This can help remove linear trends and make the data
 > stationary.
 >
-> First-Order Differencing: Y~t~' = Y~t~ - Y~t~-~1~
+> First-Order Differencing: Yt' = Yt - Yt-1
 >
 > **Second-Order Difference (Lag 2 Difference)**: The second-order
 > difference (Lag 2 Difference) involves subtracting the first-order
